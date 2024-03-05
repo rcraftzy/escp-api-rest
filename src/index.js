@@ -1,18 +1,18 @@
 import express from 'express'
-import path from 'path'
-import { fileURLToPath } from 'url';
 import { print } from "./example.js"
+// import path from 'path'
+// import { fileURLToPath } from 'url';
 
 const app = express();
-
+/* 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, '/dist')));
+*/
+// app.use(express.static(path.join(__dirname, '/dist')));
 
 app.get('/imprimir', (req, res) => print());
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  res.send("Hello World");
 });
 
 const puerto = 3000;

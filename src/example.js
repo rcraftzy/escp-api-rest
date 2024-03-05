@@ -1,13 +1,5 @@
 import { EscPos } from "@tillpos/xml-escpos-helper"
-import fs from 'fs-extra'
-import path from "path"
 import net from "net"
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const tempalatePath = path.join(__dirname, './sample.xml')
 
 function generateBuffer (template, data) {
   return EscPos.getBufferFromTemplate(template, data)
@@ -23,8 +15,23 @@ async function sendMessageToPrinter (host, port,message) {
 
 export async function print () {
   try {
-    const template = fs.readFileSync(tempalatePath, {encoding: 'utf8'})
+    const template = `
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+<align mode="center">
+<text-line size="2:0">{{title}}</text-line>
+</align>
+<line-feed />
 
+<align mode="right">
+<text-line size="1:0">{{date}}</text-line>
+</align>
+
+<line-feed />
+
+<paper-cut />
+</document>
+`
     const PRINTER = {
       host: "192.168.0.101",
       port: "9100"
@@ -43,7 +50,7 @@ export async function print () {
 
 function connectToPrinter(host, port, buffer) {
   return new Promise((resolve, reject) => {
-    const device = new net.Socket();
+    let device = new net.Socket();
 
     device.on("close", () => {
       if (device) {
