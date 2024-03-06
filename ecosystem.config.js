@@ -3,7 +3,7 @@ module.exports = {
     name: 'api',
     script: 'index.js',
     
-    cwd: "/home/admin01/projects/api/",
+    cwd: "/home/admin01/projects/api/src",
     autorestart: true,
     watch: false,
     max_memory_restart: '16',    
