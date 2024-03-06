@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 app.get('/imprimir', (req, res) => print());
 app.get('/', (req, res) => {
-  res.send("Hello World, voy a poner aqui un poco de mi español, seguire probando");
+  res.send("Hello World, estoy por poner el texto definitivo que debe funcionar");
 });
 
 const puerto = 3000;
