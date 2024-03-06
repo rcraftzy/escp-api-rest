@@ -1,5 +1,5 @@
-import { EscPos } from "@tillpos/xml-escpos-helper"
-import net from "net"
+const { EscPos } = require("@tillpos/xml-escpos-helper")
+const net = require("net")
 
 function generateBuffer (template, data) {
   return EscPos.getBufferFromTemplate(template, data)

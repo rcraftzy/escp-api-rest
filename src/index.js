@@ -1,5 +1,5 @@
-import express from 'express'
-import { print } from "./example.js"
+const express = require('express')
+const { print } = require("./example.js")
 // import path from 'path'
 // import { fileURLToPath } from 'url';
 
