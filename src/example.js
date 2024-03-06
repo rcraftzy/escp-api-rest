@@ -13,7 +13,7 @@ async function sendMessageToPrinter (host, port,message) {
   }
 }
 
-export async function print () {
+async function print () {
   try {
     const template = `
 <?xml version="1.0" encoding="UTF-8"?>
@@ -70,3 +70,4 @@ function connectToPrinter(host, port, buffer) {
     });
   })
 }
+module.exports = {print}
