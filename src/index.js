@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 app.get('/imprimir', (req, res) => print());
 app.get('/', (req, res) => {
-  res.send("Hola mundo, actualizacion 1");
+  res.send("Hola mundo, actualizacion 2");
 });
 
 const puerto = 3000;
