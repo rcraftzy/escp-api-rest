@@ -18,7 +18,7 @@ module.exports = {
       ref  : 'origin/main',
       repo : 'git@github.com:rcraftzy/escp-api-rest',
       fetch: 'all',
-      path : '/home/admin01/project',
+      path : '/home/admin01/projects',
       'post-deploy' : 'git fetch && git merge origin/main && npm install && pm2 reload ecosystem.config.js --env production'     
     }
   }
