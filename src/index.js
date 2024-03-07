@@ -19,7 +19,7 @@ app.get('/imprimir', (req, res) => {
 app.get('/', (req, res) => {
  const {ref} = req.body
   if (ref === 'refs/heads/main') {
-    exec('cd /home/admin01/projects/current && pm2 deploy production', (error) => {
+    exec('~/service.sh', (error) => {
       if (error) return res.status(500).send("Error interno en la actualizacion")
       res.status(200).send("Actualizado")
     })
