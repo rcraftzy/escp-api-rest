@@ -19,7 +19,7 @@ app.get('/imprimir', (req, res) => {
 app.get('/', (req, res) => {
  const {ref} = req.body
   if (ref === 'refs/heads/main') {
-    exec('~/service.sh', (error) => {
+    exec('echo "Hola"', (error) => {
       if (error) return res.status(500).send("Error interno en la actualizacion")
       res.status(200).send("Actualizado")
     })
