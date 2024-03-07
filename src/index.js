@@ -6,7 +6,7 @@ const app = express();
 app.get('/imprimir', (req, res) => {
   const {ref} = req.body
   if (ref === 'refs/heads/main') {
-    exec('git pull && npm install && pm2 restart api', (error) => {
+    exec('~/service.sh', (error) => {
       if (error) return res.status(500).send("Error interno en la actualizacion")
       res.status(200).send("Actualizado")
     })
