@@ -17,7 +17,7 @@ app.get('/imprimir', (req, res) => {
   return print()
 });
 app.get('/', (req, res) => {
-  res.send("Hola mundo, actualizacion 4");
+  res.send("Hola mundo, actualizacion 5");
 });
 
 const puerto = 3000;
